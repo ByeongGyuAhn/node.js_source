@@ -35,19 +35,8 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-//test
-app.get();
-1
-2
-3
+//test 2014-04-22 pm 05:30
 
-5
-6
-7
-
-8
-9
-10
 
 
 

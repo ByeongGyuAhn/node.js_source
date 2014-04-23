@@ -6,3 +6,59 @@ body {
 a {
   color: #00B7FF;
 }
+/* p.241 추가*/
+
+#game{
+	width: 320px;
+	height: 300px;
+}
+
+#bingo{
+	float: left;
+}
+
+#user{
+	float: right;
+}
+
+#list{
+	border: 1px solid gray;
+	width: 140px;
+	height: 50px;
+	overflow: auto;
+	margin-bottom: 10px;
+}
+
+#logs{
+	border: 1px solid gray;
+	width: 140px;
+	height: 50px;
+	overflow: auto;
+	margin-bottom: 10px;
+}
+
+.bongo-board{
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+	border-spacing: 0px;
+	margin-bottom: 10px;
+}
+
+.bingo-board td{
+	width: 25px;
+	height: 25px;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;	
+}
+
+#input_box{
+	width: 140px;
+	height: 50px;
+	margin-bottom: 10px;
+	
+}
+
+#user_input{
+	border: 1px solid gray;
+	width: 140px;	
+}

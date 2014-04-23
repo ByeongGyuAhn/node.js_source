@@ -29,6 +29,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('main', routes.main);//p.229 추가
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

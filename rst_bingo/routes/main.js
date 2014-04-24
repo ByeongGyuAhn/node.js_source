@@ -35,3 +35,4 @@ var bingo = {
 $(document).ready(function(){
 	bingo.init();	
 });
+

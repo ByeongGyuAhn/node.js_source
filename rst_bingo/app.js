@@ -49,9 +49,9 @@ io.sockets.on('connection', function(socket){
         
         socket.username = username;
         
-        user[user_count] = {};
-        user[user_count].name = username;
-        user[user_count].turn = false;
+        users[user_count] = {};
+        users[user_count].name = username;
+        users[user_count].turn = false;
         
         io.sockets.emit('update_users', users);
         

@@ -3,7 +3,7 @@
 //
 var  express = require('express')
 	, routes = require('./routes')
-    , user = require('./routes/usr')
+    , user = require('./routes/user')
     , http = require('http')
     , path = require('path')
     , socketio = require('socket.io');

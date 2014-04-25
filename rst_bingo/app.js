@@ -38,7 +38,7 @@ server.listen(app.get('port'), function(){
     console.log("express server listening on port" + app.get('port'));
 });
 
-var user = {};
+var users = {};
 var user_count = 0;
 var turn_count = 0;
 

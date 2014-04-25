@@ -9,7 +9,7 @@ var bingo = {
             //initialize
             this.is_my_turn = true;
             
-            this.socket = io.connect('http://ec2-54-178-167-173.ap-northeast-1.compute.amazonaws.com:3000/');
+            this.socket = io.connect('http://ec2-54-178-167-173.ap-northeast-1.compute.amazonaws.com:3000');
             
             this.socket.on("check_number",function(){
                 self.where_is_it(data.num);

@@ -60,30 +60,61 @@ var bingo = {
 
         select_num: function (obj){
             if(this.is_my_turn && !$(obj).attr("checked")){
+                //send num to other players
+                this.socket.emit("select", {username : $("username").val(), num: $(obj).text() } );
                 
+                this.chek_num(obj);
                 
+                this.is_my_turn = false;
+                
+            }else{
+                this.print_msg("it is not your turn!");
             }
-
         },//select_num - end
 
         where_is_it: function(num){
+            var self = this;
+            var obj = null;
+            
+            $("table.bingo-board td").each(function(i){
+                if($(this).text() == num){
+                    self.chek_num(this);
+                }
+            });
 
         },//where_is_it - end
 
         chek_num: function(obj){
+            $(obj).css("text-decoration", "line-through");
+            $(obj).css("color", "#ccc");
+            $(obj).attr("checked", true);
 
         },//chek_num - end
 
         update_userlist: function(data){
+            var self = this;
+            $("#list").empty();
+            
+            console.log(data);
+            
+            $.each(data, function(key, value){
+                var turn = "(-)&nbsp;";
+                if(value.turn == true){
+                    turn = "(*)&nbsp;";
+                    console.log(value.name);
+                    console.log($("#username").val());
+                    if(value.name == $("#username").val()){
+                        self.is_my_turn = true;
+                    }
+                }
+                $("#list").append(turn + value.name + "<br />");
+            });
 
         },//update_userlist - end
 
-        leave: function(){
-
-        },//leave - end
-
+        
         print_msg: function(msg){
-
+            $("#logs").append(msg + "<br />");
         }//print_msg -end
 };
 

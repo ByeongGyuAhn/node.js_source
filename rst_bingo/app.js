@@ -42,7 +42,7 @@ var user = {};
 var user_count = 0;
 var turn_count = 0;
 
-io.socket.on('connection', function(socket){
+io.sockets.on('connection', function(socket){
     
     socket.on('join', function(data){
         var username = data.username;
@@ -53,7 +53,7 @@ io.socket.on('connection', function(socket){
         user[user_count].name = username;
         user[user_count].turn = false;
         
-        io.socket.emit('update_users', users);
+        io.sockets.emit('update_users', users);
         
         user_count++;
     });//socket.on join -end
@@ -62,7 +62,7 @@ io.socket.on('connection', function(socket){
         socket.broadcast.emit("game_started", data);
         user[turn_count].turn  = true;
         
-        io.socket.emit('update_users', users);        
+        io.sockets.emit('update_users', users);        
     });//socket.on game_start - end
     
     socket.on('select', function(data){
@@ -75,12 +75,12 @@ io.socket.on('connection', function(socket){
         }
         users[turn_count].turn = ture;
         
-        io.socket.emit('update_users', users);
+        io.sockets.emit('update_users', users);
     });//socket.on select - end
     
     socket.on('disconnect', function(){
         delete user[socket.username];
-        io.socket.emit('update_users', users);
+        io.sockets.emit('update_users', users);
         
         user_count--;        
     });//socket.on disconnect - end

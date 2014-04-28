@@ -60,7 +60,7 @@ io.sockets.on('connection', function(socket){
     
     socket.on('game_start', function(data){
         socket.broadcast.emit("game_started", data);
-        user[turn_count].turn  = true;
+        users[turn_count].turn  = true;
         
         io.sockets.emit('update_users', users);        
     });//socket.on game_start - end
@@ -79,7 +79,7 @@ io.sockets.on('connection', function(socket){
     });//socket.on select - end
     
     socket.on('disconnect', function(){
-        delete user[socket.username];
+        delete users[socket.username];
         io.sockets.emit('update_users', users);
         
         user_count--;        

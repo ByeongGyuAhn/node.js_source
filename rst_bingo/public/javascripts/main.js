@@ -7,34 +7,42 @@ var bingo = {
             var self = this;
             
             //initialize
+            
+            //자신의 순서를 확인
             this.is_my_turn = true;
             
             this.socket = io.connect('http://ec2-54-178-167-173.ap-northeast-1.compute.amazonaws.com:3000');
             
+            //체크된 번호를 소캣통신으로 처리한다. 
             this.socket.on("check_number",function(data){
                 self.where_is_it(data.num);
                 self.print_msg(data.username + " checked '" +  data.num + "'");
             });
             
+            //게임시작 버튼을 누르면 게임 시작을 알리고 시작버튼은 사라진다.
             this.socket.on("game_started", function(data){
                 self.print_msg(data.username + " started this game ");
                 $("#start_button").hide();
             });
             
+            //유저의 현재 상태 업데이트(순서,체크한 숫자)
             this.socket.on("update_users", function(data){
                 self.update_userlist(data);
             });
             
             //join
+            //
             this.socket.on("connect",function(){
                 self.socket.emit("join", { username: $("#username").val() });
             });
             
+            //빙고 숫자 1-25 설정
             var numbers = [];
             for(var i=1; i<=25; i++){
                 numbers.push(i);
             }
             
+            //빙고 숫자 랜덤함수 이용 무작위로 숫자 생성
             numbers.sort(function(a, b){
                 var temp = parseInt(Math.random() * 10);
                 var isOddOrEven = temp % 2;

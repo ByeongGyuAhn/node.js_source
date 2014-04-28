@@ -67,7 +67,7 @@ io.sockets.on('connection', function(socket){
     
     socket.on('select', function(data){
         socket.broadcast.emit("check_number", data);
-        ffdgfdg
+        
         users[turn_count].turn = false;
         turn_count++;
         if(turn_count >= user_count){

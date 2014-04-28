@@ -11,14 +11,14 @@ var bingo = {
             
             this.socket = io.connect('http://ec2-54-178-167-173.ap-northeast-1.compute.amazonaws.com:3000');
             
-            this.socket.on("check_number",function(){
+            this.socket.on("check_number",function(data){
                 self.where_is_it(data.num);
                 self.print_msg(data.username + " checked '" +  data.num + "'");
             });
             
             this.socket.on("game_started", function(data){
                 self.print_msg(data.username + " started this game ");
-                $("#start_button").hide;
+                $("#start_button").hide();
             });
             
             this.socket.on("update_users", function(data){
@@ -42,7 +42,7 @@ var bingo = {
                 return(isOddOrEven*isPosOrNeg);
             });
             
-            $("table.bingo-board td").each(function(){
+            $("table.bingo-board td").each(function(i){
                 $(this).html(numbers[i]);
                 
                 $(this).click(function(){

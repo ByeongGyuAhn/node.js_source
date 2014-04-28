@@ -26,7 +26,7 @@ var bingo = {
             });
             
             //join
-            this.socket.on("connect-main.js 파일에서 접속확인",function(){
+            this.socket.on("connect",function(){
                 self.socket.emit("join", { username: $("#username").val() });
             });
             

@@ -89,5 +89,8 @@ io.sockets.on('connection', function(socket){
 });//io.socket.on - end
 
 
+//http://ec2-54-178-167-173.ap-northeast-1.compute.amazonaws.com:3000/main?username=test1
+//http://ec2-54-178-167-173.ap-northeast-1.compute.amazonaws.com:3000/main?username=test2
+
 
 

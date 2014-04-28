@@ -51,7 +51,7 @@ var bingo = {
             });
             
             $("#start_button").click(function(){
-                self.socket.emit("game_start",{ username  : $("username").val()});
+                self.socket.emit("game_start",{ username  : $("#username").val()});
                 self.print_msg("You started this game.");
                 $("#start_button").hide();
             });            
@@ -61,7 +61,7 @@ var bingo = {
         select_num: function (obj){
             if(this.is_my_turn && !$(obj).attr("checked")){
                 //send num to other players
-                this.socket.emit("select", {username : $("username").val(), num: $(obj).text() } );
+                this.socket.emit("select", {username : $("#username").val(), num: $(obj).text() } );
                 
                 this.chek_num(obj);
                 

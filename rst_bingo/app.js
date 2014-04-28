@@ -73,7 +73,7 @@ io.sockets.on('connection', function(socket){
         if(turn_count >= user_count){
             turn_count = 0;            
         }
-        users[turn_count].turn = ture;
+        users[turn_count].turn = true;
         
         io.sockets.emit('update_users', users);
     });//socket.on select - end

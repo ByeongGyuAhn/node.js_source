@@ -86,7 +86,7 @@ var bingo = {
 
         chek_num: function(obj){
             $(obj).css("text-decoration", "line-through");
-            $(obj).css("color", "#red");
+            $(obj).css("color", "#ff2300");
             $(obj).attr("checked", true);
 
         },//chek_num - end

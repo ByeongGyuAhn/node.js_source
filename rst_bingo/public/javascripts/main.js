@@ -50,6 +50,7 @@ var bingo = {
                 return(isOddOrEven*isPosOrNeg);
             });
             
+            //빙고판에 클릭한 숫자를 서버에 전송하여 다른 사용자에게 전달 될수 있도록한다.
             $("table.bingo-board td").each(function(i){
                 $(this).html(numbers[i]);
                 
@@ -58,6 +59,7 @@ var bingo = {
                 });
             });
             
+            //시작버튼 클릭시. 게임시작을 알리는 콜백함수
             $("#start_button").click(function(){
                 self.socket.emit("game_start",{ username  : $("#username").val()});
                 self.print_msg("You started this game.");
@@ -65,7 +67,7 @@ var bingo = {
             });            
         },//init - end
     
-
+        //선택된 숫자를 서버에 전달하고 빙고판에서 체크하고 상대방에게 자기 차례라고 알려줌
         select_num: function (obj){
             if(this.is_my_turn && !$(obj).attr("checked")){
                 //send num to other players
@@ -79,7 +81,8 @@ var bingo = {
                 this.print_msg("it is not your turn!");
             }
         },//select_num - end
-
+        
+        // 상대방이 선택한 수자가 어디인지 찾아서 check_num()이라는 메서드 호출하는 역활.
         where_is_it: function(num){
             var self = this;
             var obj = null;
@@ -92,13 +95,15 @@ var bingo = {
 
         },//where_is_it - end
 
+        //상대방이 선택한 수자를 선택할 수 없는 상태로 만들고 화면에 표시해주는 역활.
         chek_num: function(obj){
             $(obj).css("text-decoration", "line-through");
             $(obj).css("color", "#ff2300");
             $(obj).attr("checked", true);
 
         },//chek_num - end
-
+        
+        //사용자의 목록과 순서를 표시
         update_userlist: function(data){
             var self = this;
             $("#list").empty();
@@ -120,7 +125,7 @@ var bingo = {
 
         },//update_userlist - end
 
-        
+        //메세지 출력 함수
         print_msg: function(msg){
             $("#logs").append(msg + "<br />");
         }//print_msg -end

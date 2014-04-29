@@ -2,7 +2,7 @@
 /*
  * GET home page.
  */
-
+// /views/index.jade 파일 랜더링
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };

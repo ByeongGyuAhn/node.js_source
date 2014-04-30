@@ -37,7 +37,7 @@ app.configure(function(){
 app.configure('development', function(){
     app.use(express.errorHandler());
 });
-//app.get <- get방식으로 정보롤 받아오는것을 의미한다.
+//app.get <- get방식으로 정보롤 받아오는것을 의미한다.(app.post 는 포스트 방식을 의미)
 app.get('/', routes.index);
 app.get('/main', routes.main);//클라이언트에서 main으로 접속하면 routes 모듈의 main()메서드가 실행되도록 연결하는 코드.(실제 라우팅 담당 파일 routes/index.js)
 app.get('/users', user.list);

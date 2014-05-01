@@ -62,7 +62,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
             //시작버튼 클릭시. 게임시작을 알리는 콜백함수
             $("#start_button").click(function(){
                 self.socket.emit("game_start",{ username  : $("#username").val()});
-                self.print_msg("You started this game.");
+                self.print_msg("You started this game. 먼저 시작하세요.");
                 $("#start_button").hide();
             });            
         },//init - end

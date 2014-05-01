@@ -56,7 +56,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 
                 return(isOddOrEven*isPosOrNeg);
             });
-            console.log("numbers.sort() " + numbers.sort());
+           // console.log("numbers.sort() " + numbers.sort());
             
             //빙고판에 클릭한 숫자를 서버에 전송하여 다른 사용자에게 전달 될수 있도록한다.
             $("table.bingo-board td").each(function(i){

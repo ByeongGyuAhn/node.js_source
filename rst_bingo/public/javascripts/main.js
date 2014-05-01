@@ -56,6 +56,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 console.log("isOddOrEven = " + isOddOrEven);
                 console.log("isPosOrNeg= " + isPosOrNeg);
                 console.log("isOddOrEven*isPosOrNeg " + isOddOrEven*isPosOrNeg);
+                console.log(\n);
                 
                 return(isOddOrEven*isPosOrNeg);
             });

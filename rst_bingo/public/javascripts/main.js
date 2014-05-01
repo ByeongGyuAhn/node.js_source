@@ -66,13 +66,13 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
             //빙고판에 클릭한 숫자를 서버에 전송하여 다른 사용자에게 전달 될수 있도록한다.
             $("table.bingo-board td").each(function(i){
                 $(this).html(numbers[i]);
-                console.log("$(this).html(numbers[i])= " + $(this).html(numbers[i]).value);
+                
                 $(this).click(function(){
                     
                     self.select_num(this);
                     
                 });
-                console.log("$(this).click() = " + $(this).click().value);
+                
             });
             
             //시작버튼 클릭시. 게임시작을 알리는 콜백함수

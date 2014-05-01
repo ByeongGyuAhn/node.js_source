@@ -42,7 +42,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 numbers.push(i);
                 console.log("numbers.push(i) = " + numbers.push(i));
             }
-            console.log("numbers = " + numbers[]);
+           // console.log("numbers = " + numbers[]);
             //빙고 숫자 랜덤함수 이용 무작위로 숫자 생성
             numbers.sort(function(a, b){
                 var temp = parseInt(Math.random() * 10);

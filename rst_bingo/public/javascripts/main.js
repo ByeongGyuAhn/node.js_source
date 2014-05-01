@@ -1,5 +1,5 @@
 //2014-04-24 p.245 추가
-var bingo = {
+var bingo = {//main.jade 에서 bingo id값으로 이용
         is_my_turn: Boolean,
         socket: null,
 

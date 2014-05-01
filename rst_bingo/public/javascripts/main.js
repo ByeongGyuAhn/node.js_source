@@ -40,6 +40,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
             var numbers = [];
             for(var i=1; i<=25; i++){
                 numbers.push(i);
+                console.log("numbers.push(i) = " + numbers.push(i));
             }
             
             //빙고 숫자 랜덤함수 이용 무작위로 숫자 생성
@@ -47,7 +48,9 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 var temp = parseInt(Math.random() * 10);
                 var isOddOrEven = temp % 2;
                 var isPosOrNeg = temp > 5 ? 1 : -1;
-                console.log("sort result = " + isOddOrEven*isPosOrNeg);
+                console.log("temp = " + temp);
+                console.log("isOddOrEven = " + isOddOrEven);
+                console.log("isPosOrNeg= " + isPosOrNeg);
                 return(isOddOrEven*isPosOrNeg);
             });
             
@@ -56,6 +59,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 $(this).html(numbers[i]);
                 
                 $(this).click(function(){
+                    console.log("self.select_num(this) = " + self.select_num(this));
                     self.select_num(this);
                 });
             });

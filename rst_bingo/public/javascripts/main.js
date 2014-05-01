@@ -40,7 +40,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
             var numbers = [];
             for(var i=1; i<=25; i++){
                 numbers.push(i);
-                console.log("numbers.push(i) = " + numbers.push(i));
+               // console.log("numbers.push(i) = " + numbers.push(i));
             }
            // console.log("numbers = " + numbers[]);
             //빙고 숫자 랜덤함수 이용 무작위로 숫자 생성

@@ -39,12 +39,13 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
             //빙고 숫자 1-25 설정
             var numbers = [];
             for(var i=1; i<=25; i++){
+                console.log("i = " + i);
                 numbers.push(i);
-               // console.log("numbers.push(i) = " + numbers.push(i));
+                console.log("numbers.push(i) = " + numbers.push(i));
             }
            // console.log("numbers = " + numbers[]);
             //빙고 숫자 랜덤함수 이용 무작위로 숫자 생성
-            console.log("numbers.sort() 1 " + numbers.sort());
+            //console.log("numbers.sort() 1 " + numbers.sort());
             numbers.sort(function(a, b){
                 var temp = parseInt(Math.random() * 10);
                 var isOddOrEven = temp % 2;

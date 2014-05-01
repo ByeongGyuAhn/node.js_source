@@ -47,6 +47,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 var temp = parseInt(Math.random() * 10);
                 var isOddOrEven = temp % 2;
                 var isPosOrNeg = temp > 5 ? 1 : -1;
+                console.log("sort result = " + isOddOrEven*isPosOrNeg);
                 return(isOddOrEven*isPosOrNeg);
             });
             

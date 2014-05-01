@@ -51,6 +51,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 var isOddOrEven = temp % 2;
                 var isPosOrNeg = temp > 5 ? 1 : -1;
                 
+                console.log("random = " + Math.random() * 10);
                 console.log("temp = " + temp);
                 console.log("isOddOrEven = " + isOddOrEven);
                 console.log("isPosOrNeg= " + isPosOrNeg);
@@ -58,9 +59,7 @@ var bingo = {//main.jade 에서 bingo id값으로 이용
                 
                 return(isOddOrEven*isPosOrNeg);
             });
-            console.log("numbers.sort() result" + numbers.sort(1));
-            console.log("numbers.sort() result" + numbers.sort(2));
-            console.log("numbers.sort() result" + numbers.sort(3));
+            
             console.log("numbers.sort()" + numbers.sort());
             
             //빙고판에 클릭한 숫자를 서버에 전송하여 다른 사용자에게 전달 될수 있도록한다.
